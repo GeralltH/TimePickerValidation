@@ -1,0 +1,21 @@
+<div>
+  <p id="timeError" style="color: red; display: none">
+    Please select a time between 9AM - 5PM
+  </p>
+  <input type="time" id="timePicker" onchange="validTimeJS()" />
+</div>
+
+<script>
+  function validTimeJS() {
+    var requestedTime = document.getElementById("timePicker").value;
+
+    //if input not in time range
+    if (requestedTime < "09:00" || requestedTime > "17:00") {
+      document.getElementById("timeError").style.display = "";
+    }
+    //clear the error class
+    else {
+      document.getElementById("timeError").style.display = "none";
+    }
+  }
+</script>
